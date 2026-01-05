@@ -13,10 +13,12 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from unsubscribe import unsubscribe_bp
 from email_utils import send_verification_email
 
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
 app = Flask(
     __name__,
-    template_folder="wepages/templates",
-    static_folder="webpages/static"
+    template_folder=os.path.join(BASE_DIR, "webpages", "templates"),
+    static_folder=os.path.join(BASE_DIR, "webpages", "static"),
 )
 app.secret_key = "supersecretkey"  # required for flash messages
 init_db()
@@ -48,7 +50,9 @@ else:
 
 EMAIL_REGEX = r"^[^@]+@[^@]+\.[^@]+$"
 
-
+@app.route("/")
+def home():
+    return redirect(url_for("signup"))
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
