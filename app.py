@@ -13,7 +13,11 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from unsubscribe import unsubscribe_bp
 from email_utils import send_verification_email
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    template_folder="wepages/templates",
+    static_folder="webpages/static"
+)
 app.secret_key = "supersecretkey"  # required for flash messages
 init_db()
 # ensure CSV migrated/has header
@@ -203,4 +207,4 @@ def hash_code(code: str) -> str:
     return hashlib.sha256(code.encode()).hexdigest()
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
