@@ -38,6 +38,7 @@ python_website\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      |--main.py\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      |--subscriptions.py\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      |--unsubscribe.py
+##### bg.jpg NOTE: It ***has*** to be named `bg.jpg` to work - try to choose a circular logo.
 ##### After setting this up, copy all the code to their respective files, or just download them. Whatever works.
 
 #### Next, there are a few things that need to be set up to work correctly:
