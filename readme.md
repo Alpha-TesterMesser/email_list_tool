@@ -1,3 +1,5 @@
+https://github.com/Alpha-TesterMesser/email_list_tool/blob/main/webpages/templates/signup.html
+
 # Project Description:
 ### Thank you for taking interest in this project! A quick summary would be an email tool that can manage subscriptions, unsubscribes, verification, and confirmation email sending (containing the verification code).
 #### A bit more of a technical note:
