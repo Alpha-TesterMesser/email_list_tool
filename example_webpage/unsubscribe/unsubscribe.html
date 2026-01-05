@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Unsubscribe from Mailing List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="animate-bg">
+</body>
+<body>
+    <div class="container">
+        <h1>
+            Unsubscribe — enter your email below:
+        </h1>
+        <form method="POST" action="/unsubscribe">
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+            <button type="submit">Unsubscribe</button>
+        </form>
+
+        <!-- Flash messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        <li class="flash-{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <h1 style="color: #909090; font-size: 10px;">
+            <a href="{{ url_for('index') }}" style="color:#909090">
+                Click here
+            </a>
+            to subscribe
+        </h1>
+    </div>
+</body>
+</html>
